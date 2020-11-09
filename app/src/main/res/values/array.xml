@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="typeSpinner">
+        <item> Gama Blanca (frígorifico, horno...)</item>
+        <item> Televisor </item>
+        <item> Pequeño electrodoméstico del hogar</item>
+        <item> Equipos de informática y telecomunicaciones </item>
+        <item> Otros Aparatos </item>
+    </string-array>
+
+    <string-array name="stateSpinner">
+        <item> Funcionando y en perfecto estado </item>
+        <item > Defectos estéticos y funcionando </item>
+        <item> Pequeña avería identificada</item>
+    </string-array>
+</resources>

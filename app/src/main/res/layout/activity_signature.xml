@@ -7,35 +7,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/user_signature_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="264dp"
         android:text="Firma del Donante"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:icon="@drawable/ic_baseline_create_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/worker_signature_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
         android:layout_marginTop="50dp"
         android:text="Firma del Receptor"
+        app:icon="@drawable/ic_baseline_create_24"
         app:layout_constraintEnd_toEndOf="@+id/user_signature_button"
         app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="@+id/user_signature_button"
         app:layout_constraintTop_toBottomOf="@+id/user_signature_button" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/finalize_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="50dp"
         android:text="Finalizar"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

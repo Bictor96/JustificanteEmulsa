@@ -27,14 +27,15 @@
                 android:layout_marginTop="40dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/confirm_ns"
-                tools:srcCompat="@tools:sample/avatars" />
+                tools:srcCompat="@tools:sample/avatars"/>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/confirmButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="@string/confirm"
+                app:backgroundTint="@color/colorPrimary"
                 app:layout_constraintEnd_toEndOf="@+id/workerSignatureView"
                 app:layout_constraintHorizontal_bias="0.56"
                 app:layout_constraintStart_toStartOf="@+id/workerSignatureView"
@@ -51,11 +52,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/confirm_description"
                 tools:srcCompat="@tools:sample/avatars" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/cancelButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:background="@color/colorPrimary"
+                android:backgroundTint="@color/colorPrimary"
                 android:onClick="onCancelButton"
                 android:text="@string/cancel"
                 app:layout_constraintEnd_toEndOf="@+id/signatureView"
@@ -231,13 +234,13 @@
 
             <LinearLayout
                 android:id="@+id/linearLayout"
-                android:layout_width="430dp"
+                android:layout_width="510dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="@+id/textView2"
-                app:layout_constraintStart_toStartOf="@+id/emulsa_logo"
-                app:layout_constraintTop_toBottomOf="@+id/date_textview">
+                app:layout_constraintStart_toStartOf="@+id/imageView2"
+                app:layout_constraintTop_toBottomOf="@+id/confirm_guid">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -255,32 +258,21 @@
 
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/emulsa_logo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="75dp"
-                android:layout_marginTop="50dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@drawable/ic_baseline_image_24" />
-
             <TextView
                 android:id="@+id/textView2"
                 style="@style/TextAppearance.MaterialComponents.Headline6"
-                android:layout_width="wrap_content"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                android:layout_marginEnd="32dp"
                 android:text="@string/pdf_title"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/emulsa_logo"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/date_textview"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="300dp"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:focusable="false"
@@ -296,6 +288,35 @@
                     android:focusableInTouchMode="false"
                     android:hint="Fecha"
                     android:text="12/10/2020" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="125dp"
+                android:src="@drawable/hm_logo_100"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/confirm_guid"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:focusable="false"
+                android:hint="ID"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:layout_constraintStart_toStartOf="@+id/date_textview"
+                app:layout_constraintTop_toBottomOf="@+id/date_textview">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:id="@+id/guid_view"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:enabled="true"
+                    android:focusable="false" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

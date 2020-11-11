@@ -35,6 +35,7 @@ import com.example.justificanteemulsa.Classes.UserData;
 import com.example.justificanteemulsa.Classes.Utils;
 import com.example.justificanteemulsa.MainActivity;
 import com.example.justificanteemulsa.R;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.File;
@@ -45,6 +46,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.UUID;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -57,7 +59,7 @@ public class ConfirmDialogFragment extends DialogFragment {
     private Bitmap workerSignature;
 
     private static final int SignatureWidth = 150;
-    private static final int SignatureHeight = 75;
+    private static final int SignatureHeight = 150;
     private static final String DownloadPath = Environment.getExternalStorageDirectory() + "/Justificantes/";
 
     private static final int SAVE_PDF_REQUEST = 101;
@@ -91,6 +93,11 @@ public class ConfirmDialogFragment extends DialogFragment {
 
         TextInputLayout dateView = view.findViewById(R.id.date_textview);
         dateView.getEditText().setText(dateFormat.format(now));
+
+        // Añadimos GUID
+        TextInputLayout guid = view.findViewById(R.id.confirm_guid);
+        guid.getEditText().setText(UUID.randomUUID().toString());
+        setTextLayoutOptions(guid);
 
         ImageView userSignatureView = view.findViewById(R.id.signatureView);
         if (this.userSignature != null)

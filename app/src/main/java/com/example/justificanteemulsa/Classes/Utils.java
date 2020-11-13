@@ -21,16 +21,7 @@ import java.util.List;
 
 public class Utils {
 
-  private static final Uri FolderUri = Uri.parse(Environment.getExternalStorageDirectory()+"/Justificantes");
-
-  public static void startPdfReaderIntent(Activity activity, Uri pdfUri) {
-    Intent intent = new Intent(Intent.ACTION_VIEW);
-    intent.setDataAndType(pdfUri, "application/pdf");
-
-
-    Log.d("StartPdfReader", "Opening pdf " + pdfUri.toString());
-    activity.startActivity(intent);
-  }
+  private static final Uri FolderUri = Uri.parse(Environment.getExternalStorageDirectory()+"/Downloads");
 
   public static void showToast(Activity activity, String msg) {
     Toast.makeText(activity, msg, Toast.LENGTH_SHORT);

@@ -2,14 +2,20 @@ package com.example.justificanteemulsa;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.DocumentsContract;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +23,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.justificanteemulsa.Activities.UserDataActivity;
@@ -24,6 +31,7 @@ import com.example.justificanteemulsa.Classes.ItemData;
 import com.example.justificanteemulsa.Classes.ItemState;
 import com.example.justificanteemulsa.Classes.ItemType;
 import com.example.justificanteemulsa.Classes.Utils;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends Activity {
@@ -116,21 +124,26 @@ public class MainActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PICK_PDF_REQUEST && resultCode == RESULT_OK ) {
+            Log.d("Main", "Opening PDF " + data.getData().toString());
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            intent.setDataAndType(data.getData(), "application/pdf");
 
-        if (requestCode == PICK_PDF_REQUEST) {
-            Utils.startPdfReaderIntent(this, data.getData());
+            try {
+                startActivity(intent);
+            } catch (ActivityNotFoundException activityNotFoundException) {
+                View layout = findViewById(R.id.activity_layout);
+                Snackbar.make(layout, R.string.no_pdf_reader, Snackbar.LENGTH_LONG).show();
+            }
         }
     }
 
     private void openPdfFolder() {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setDataAndType(Utils.getFolderUri(), "resource/folder");
-
-        // Comprueba si hay alguna aplicación que pueda manejar este intent
-        if (intent.resolveActivity(getPackageManager()) != null)
-            startActivity(intent);
-        else
-            Toast.makeText(this, getResources().getString(R.string.no_file_explorer_installed), Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        intent.setDataAndType(Uri.parse(Environment.DIRECTORY_DOWNLOADS) ,"application/pdf");
+        startActivityForResult(intent, PICK_PDF_REQUEST);
     }
 
     private void openUserDataActivity() {

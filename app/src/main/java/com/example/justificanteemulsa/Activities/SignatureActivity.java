@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.justificanteemulsa.Classes.ItemData;
 import com.example.justificanteemulsa.Classes.UserData;

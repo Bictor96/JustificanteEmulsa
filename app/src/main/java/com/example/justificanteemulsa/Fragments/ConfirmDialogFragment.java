@@ -60,7 +60,7 @@ public class ConfirmDialogFragment extends DialogFragment {
 
     private static final int SignatureWidth = 150;
     private static final int SignatureHeight = 150;
-    private static final String DownloadPath = Environment.getExternalStorageDirectory() + "/Justificantes/";
+    private static final String DownloadPath = Environment.getExternalStorageDirectory() + "/Downloads";
 
     private static final int SAVE_PDF_REQUEST = 101;
 
@@ -161,11 +161,12 @@ public class ConfirmDialogFragment extends DialogFragment {
 
         // Guardar el documento
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
+        saveDocumentIntent();
+/*        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
             saveDocumentIntent();
         else {
             saveDocument(document);
-        }
+        }*/
     }
 
 
@@ -175,7 +176,6 @@ public class ConfirmDialogFragment extends DialogFragment {
         String filename = "Justificante_" + timestamp + "_" + name + ".pdf";
 
         Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
-        intent.setType("application/pdf");
         intent.setType("application/pdf");
         intent.putExtra(Intent.EXTRA_TITLE, filename);
 

@@ -34,4 +34,6 @@
     <string name="card_title">IMPORTANTE</string>
     <string name="no_file_explorer_installed">No tienes ninguna aplicacion instalada que pueda realizar esta accion. Aplicación Recomendad: Cx Explorador de Archivos</string>
     <string name="pdf_title">JUSTIFICANTE DEPÓSITO PARA LA REUTILIZACIÓN</string>
+    <string name="install_explorer">Instalar</string>
+    <string name="no_pdf_reader">No hay ningún Lector PDF instalado</string>
 </resources>

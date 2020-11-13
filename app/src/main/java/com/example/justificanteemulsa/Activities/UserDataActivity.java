@@ -5,9 +5,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +20,7 @@ import com.example.justificanteemulsa.Classes.ItemData;
 import com.example.justificanteemulsa.Classes.UserData;
 import com.example.justificanteemulsa.Classes.Utils;
 import com.example.justificanteemulsa.R;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.List;
@@ -24,6 +28,7 @@ import java.util.regex.Pattern;
 
 public class UserDataActivity extends Activity {
 
+    private static final int PICK_PDF_REQUEST = 102;
     private ItemData itemData;
     private static final String PHONE_REGEX = "^[0-9]{9}";
     private static final String NIF_REGEX = "^[0-9]{8,8}[A-Za-z]$";
@@ -84,6 +89,24 @@ public class UserDataActivity extends Activity {
             }
         });
     }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PICK_PDF_REQUEST && resultCode == RESULT_OK) {
+            Log.d("Main", "Opening PDF " + data.getData().toString());
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            intent.setDataAndType(data.getData(), "application/pdf");
+
+            try {
+                startActivity(intent);
+            } catch (ActivityNotFoundException activityNotFoundException) {
+                View layout = findViewById(R.id.user_activity_layout);
+                Snackbar.make(layout, R.string.no_pdf_reader, Snackbar.LENGTH_LONG).show();
+            }
+        }
+    }
+
 
     private void loadUserDataFromSharedPreferences() {
         SharedPreferences preferences = this.getSharedPreferences("SHARED_USER_DATA", MODE_PRIVATE);
@@ -159,13 +182,10 @@ public class UserDataActivity extends Activity {
     }
 
     private void openPdfFolder() {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setDataAndType(Utils.getFolderUri(), "resource/folder");
-
-        if (intent.resolveActivity(getPackageManager()) != null)
-            startActivity(intent);
-        else
-            Utils.showToast(this, getResources().getString(R.string.no_file_explorer_installed));
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        intent.setDataAndType(Uri.parse(Environment.DIRECTORY_DOWNLOADS) ,"application/pdf");
+        startActivityForResult(intent, PICK_PDF_REQUEST);
     }
 
     public void openWorkerSignatureActivity() {
@@ -217,4 +237,5 @@ public class UserDataActivity extends Activity {
         phoneText.getEditText().setText(userData.getPhoneNumber());
         emailText.getEditText().setText(userData.getEmail());
     }
+
 }

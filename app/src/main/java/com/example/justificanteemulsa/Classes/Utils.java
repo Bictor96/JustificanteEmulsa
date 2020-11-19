@@ -21,7 +21,7 @@ import java.util.List;
 
 public class Utils {
 
-  private static final Uri FolderUri = Uri.parse(Environment.getExternalStorageDirectory()+"/Downloads");
+  private static final Uri FolderUri = Uri.parse(Environment.DIRECTORY_DOWNLOADS);
 
   public static void showToast(Activity activity, String msg) {
     Toast.makeText(activity, msg, Toast.LENGTH_SHORT);

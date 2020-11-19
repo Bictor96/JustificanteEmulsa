@@ -31,7 +31,7 @@ public class UserDataActivity extends Activity {
     private static final int PICK_PDF_REQUEST = 102;
     private ItemData itemData;
     private static final String PHONE_REGEX = "^[0-9]{9}";
-    private static final String NIF_REGEX = "^[0-9]{8,8}[A-Za-z]$";
+    private static final String NIF_REGEX = "^[A-Za-z]?[0-9]{8}[A-Za-z]?$";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -29,12 +29,21 @@
                 android:text="IMPORTANTE"
                 android:textColor="@color/colorPrimary" />
 
+
             <TextView
-                android:id="@+id/textView6"
                 style="@style/TextAppearance.MaterialComponents.Body2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
                 android:text="@string/warning_text" />
+
+            <TextView
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/lopd_text" />
+
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
@@ -44,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="160dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="5dp"
         android:background="@color/colorSignatureBackground"
         app:layout_constraintEnd_toEndOf="parent"

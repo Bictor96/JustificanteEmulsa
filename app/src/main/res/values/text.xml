@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="warning_text"> Para aquellos aparatos equipados con algun tipo de memoria, que pudiera contener información, seran eliminadas, pudiendo solicitar su correspondiente certificado. Además, al firmar este documento, confirma que el objeto donado es de su propiedad.  </string>
+  <string name="warning_text"> Para aquellos aparatos equipados con algún tipo de memoria, que pudiera contener
+    información, será eliminada, pudiendo solicitar su correspondiente certificado. Además, al firmar
+    este documento, confirma que el objeto donado es de su propiedad o le ha sido cedido para este fin, y que ha sido informado que
+    todos los equipos serán cedidos a estudiantes del Principado de Asturias: Primaria, Infantil,
+    Secundaria o Universidad, para el desarrollo de sus estudios en el presente curso escolar.
+  </string>
+
+  <string name="lopd_text">  Los datos de formulario se utilizan exclusivamente para cumplir con los objetivos del mismo, de acuerdo a la legislación vigente.
+    Para consultas o modificaciones deben dirigirse a la Oficina Juridica Asociativa oja@hazmaker.org</string>
+
+  <string name="empty_text"></string>
 </resources>

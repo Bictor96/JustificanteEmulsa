@@ -14,8 +14,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/confirm_dialog"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#FFFFFF"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
 
@@ -24,10 +24,10 @@
                 android:layout_width="128dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="148dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="50dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/confirm_ns"
-                tools:srcCompat="@tools:sample/avatars"/>
+                tools:srcCompat="@tools:sample/avatars" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/confirmButton"
@@ -45,9 +45,10 @@
                 android:id="@+id/workerSignatureView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="50dp"
+                app:layout_constraintBottom_toBottomOf="@+id/signatureView"
                 app:layout_constraintEnd_toEndOf="@+id/confirm_email"
-                app:layout_constraintHorizontal_bias="0.51"
+                app:layout_constraintHorizontal_bias="0.53"
                 app:layout_constraintStart_toEndOf="@+id/signatureView"
                 app:layout_constraintTop_toBottomOf="@+id/confirm_description"
                 tools:srcCompat="@tools:sample/avatars" />
@@ -100,7 +101,9 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/confirm_itemType" />
+                    android:focusable="false"
+                    android:hint="@string/confirm_itemType"
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -115,7 +118,9 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:hint="@string/confirmItemBrando" />
+                    android:focusable="false"
+                    android:hint="@string/confirmItemBrando"
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -131,7 +136,9 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/confirm_item_ns" />
+                    android:focusable="false"
+                    android:hint="@string/confirm_item_ns"
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -147,7 +154,10 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/confirm_item_state" />
+                    android:focusable="false"
+                    android:hint="@string/confirm_item_state"
+                    android:inputType="textMultiLine"
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -155,15 +165,16 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="@+id/confirm_state"
                 app:layout_constraintStart_toStartOf="@+id/confirm_state"
-                app:layout_constraintTop_toBottomOf="@+id/confirm_state">
+                app:layout_constraintTop_toTopOf="@+id/confirm_ns">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/confirmDescription" />
+                    android:focusable="false"
+                    android:hint="@string/confirmDescription"
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -171,7 +182,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="75dp"
+                android:layout_marginStart="50dp"
                 android:layout_marginTop="40dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout">
@@ -179,7 +190,9 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/confirm_name" />
+                    android:focusable="false"
+                    android:hint="@string/confirm_name"
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -195,7 +208,9 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/confirm_nif" />
+                    android:focusable="false"
+                    android:hint="@string/confirm_nif"
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -213,7 +228,9 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/confirm_phone" />
+                    android:focusable="false"
+                    android:hint="@string/confirm_phone"
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -224,22 +241,24 @@
                 android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="@+id/confirm_phone"
                 app:layout_constraintStart_toStartOf="@+id/confirm_phone"
-                app:layout_constraintTop_toBottomOf="@+id/confirm_phone">
+                app:layout_constraintTop_toBottomOf="@+id/confirm_name">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/confirm_email" />
+                    android:focusable="false"
+                    android:hint="@string/confirm_email"
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
                 android:id="@+id/linearLayout"
-                android:layout_width="510dp"
+                android:layout_width="600dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="40dp"
                 android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="@+id/textView2"
-                app:layout_constraintStart_toStartOf="@+id/imageView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/confirm_guid">
 
                 <TextView
@@ -250,12 +269,17 @@
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
 
                 <TextView
+                    android:id="@+id/text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:text="@string/warning_text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    android:text="@string/warning_text" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="@string/lopd_text" />
             </LinearLayout>
 
             <TextView
@@ -287,36 +311,39 @@
                     android:focusable="false"
                     android:focusableInTouchMode="false"
                     android:hint="Fecha"
-                    android:text="12/10/2020" />
+                    android:text="12/10/2020"
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="125dp"
-                android:src="@drawable/hm_logo_100"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="36dp"
+                android:src="@drawable/hm_logo"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView2" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/confirm_guid"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:focusable="false"
                 android:hint="ID"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:layout_constraintStart_toStartOf="@+id/date_textview"
                 app:layout_constraintTop_toBottomOf="@+id/date_textview">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:id="@+id/guid_view"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:enabled="true"
-                    android:focusable="false" />
+                    android:focusable="false"
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

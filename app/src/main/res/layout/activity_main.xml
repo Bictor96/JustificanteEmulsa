@@ -46,11 +46,11 @@
         android:id="@+id/stateText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="52dp"
         android:text="@string/state_text"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/ns_layout"
-        app:layout_constraintStart_toStartOf="@+id/ns_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ns_layout" />
 
     <Spinner
@@ -58,10 +58,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
         android:entries="@array/typeSpinner"
+        android:maxWidth="350dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.314"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/stateText2" />
 
@@ -73,6 +75,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:entries="@array/stateSpinner"
+        android:maxWidth="350dp"
         app:layout_constraintEnd_toEndOf="@+id/stateText"
         app:layout_constraintStart_toStartOf="@+id/stateText"
         app:layout_constraintTop_toBottomOf="@+id/stateText" />
@@ -83,7 +86,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
         android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/state_layout"
@@ -100,6 +104,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:hint="Tipo y Marca"
+        android:maxWidth="350dp"
         app:layout_constraintEnd_toEndOf="@+id/typeSpinner"
         app:layout_constraintStart_toStartOf="@+id/typeSpinner"
         app:layout_constraintTop_toBottomOf="@+id/typeSpinner">
@@ -119,6 +124,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:hint="Número de Serie (Si es posible): "
+        android:maxHeight="350dp"
         app:layout_constraintEnd_toEndOf="@+id/type_layout"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/type_layout"
@@ -138,6 +144,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
+        android:maxWidth="200dp"
         app:layout_constraintEnd_toEndOf="@+id/stateSpinner"
         app:layout_constraintStart_toStartOf="@+id/stateSpinner"
         app:layout_constraintTop_toBottomOf="@+id/stateSpinner">

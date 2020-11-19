@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="typeSpinner">
-        <item> Gama Blanca (frígorifico, horno...)</item>
-        <item> Televisor </item>
-        <item> Pequeño electrodoméstico del hogar</item>
-        <item> Equipos de informática y telecomunicaciones </item>
-        <item> Otros Aparatos </item>
+        <item> Sobremesa </item>
+        <item> Pórtatil </item>
+        <item> Netbook </item>
+        <item> Monitor </item>
+        <item> Otros </item>
     </string-array>
 
     <string-array name="stateSpinner">

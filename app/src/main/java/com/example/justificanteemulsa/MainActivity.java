@@ -101,7 +101,6 @@ public class MainActivity extends Activity {
                 }
 
                 if (noErrors) {
-                    Log.d("Input", "No errors");
                     openUserDataActivity();
                 }
             }
@@ -125,7 +124,6 @@ public class MainActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICK_PDF_REQUEST && resultCode == RESULT_OK ) {
-            Log.d("Main", "Opening PDF " + data.getData().toString());
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             intent.setDataAndType(data.getData(), "application/pdf");

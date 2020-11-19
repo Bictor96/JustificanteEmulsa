@@ -58,8 +58,8 @@ public class ConfirmDialogFragment extends DialogFragment {
     private Bitmap userSignature;
     private Bitmap workerSignature;
 
-    private static final int SignatureWidth = 150;
-    private static final int SignatureHeight = 150;
+    private static final int SignatureWidth = 250;
+    private static final int SignatureHeight = 200;
     private static final String DownloadPath = Environment.getExternalStorageDirectory() + "/Downloads";
 
     private static final int SAVE_PDF_REQUEST = 101;

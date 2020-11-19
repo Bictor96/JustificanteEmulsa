@@ -33,7 +33,6 @@ public class Utils {
   }
 
   public static void SaveSignature(Activity activity, String filename, Bitmap signature) {
-    Log.d("UTILS", "PDF Filename: " + filename);
     try {
       FileOutputStream stream = activity.openFileOutput(filename, Context.MODE_PRIVATE);
       signature.compress(Bitmap.CompressFormat.PNG, 100, stream);
